@@ -10,7 +10,7 @@ export interface busquedaStreamable<T> {
    * Busca por año.
    * @param anhio - Año a buscar.
    */
-  porAnhio(anhio: number): void;
+  porAnhio(anhio: T): void;
 }
 
 export interface propiedadesStreamable<T, U, W> {
@@ -19,7 +19,7 @@ export interface propiedadesStreamable<T, U, W> {
   documentales: W[];
 }
 
-export abstract class BasicStreamableCollection implements busquedaStreamable<string>, propiedadesStreamable<Pelicula, Serie, Documental> {
+export abstract class BasicStreamableCollection implements busquedaStreamable<(string | number)>, propiedadesStreamable<Pelicula, Serie, Documental> {
   abstract porNombre(nombre: string): void;
   abstract porAnhio(anhio: number): void;
   peliculas: Pelicula[];

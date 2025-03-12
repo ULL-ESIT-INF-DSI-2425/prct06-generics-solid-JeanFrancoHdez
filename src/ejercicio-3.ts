@@ -52,68 +52,68 @@
 // const updatedContent = fileManager.readFile();
 // console.log("Updated content:", updatedContent);
 
-//// Modificación propuesta
+////// Modificación propuesta
 
-import * as fs from "fs";
+// import * as fs from "fs";
 
-interface FileReader {
-  read(filePath: string): string;
-}
+// interface FileReader {
+//   read(filePath: string): string;
+// }
 
-interface FileWriter {
-  write(filePath: string, data: string): void;
-}
+// interface FileWriter {
+//   write(filePath: string, data: string): void;
+// }
 
-class LocalFileReader implements FileReader {
-  read(filePath: string): string {
-    try {
-      const content: string = fs.readFileSync(filePath, "utf-8");
-      return content;
-    } catch (error) {
-      console.error("Error al leer el archivo");
-      return "";
-    }
-  }
-}
+// class LocalFileReader implements FileReader {
+//   read(filePath: string): string {
+//     try {
+//       const content: string = fs.readFileSync(filePath, "utf-8");
+//       return content;
+//     } catch (error) {
+//       console.error("Error al leer el archivo");
+//       return "";
+//     }
+//   }
+// }
 
-class LocalFileWriter implements FileWriter {
-  write(filePath: string, data: string): void {
-    try {
-      fs.writeFileSync(filePath, data, "utf-8");
-      console.log("Archivo escrito exitosamente.");
-    } catch (error) {
-      console.error("Error al escribir en el archivo");
-    }
-  }
-}
+// class LocalFileWriter implements FileWriter {
+//   write(filePath: string, data: string): void {
+//     try {
+//       fs.writeFileSync(filePath, data, "utf-8");
+//       console.log("Archivo escrito exitosamente.");
+//     } catch (error) {
+//       console.error("Error al escribir en el archivo");
+//     }
+//   }
+// }
 
-class FileManager {
-  constructor(private fileReader: FileReader, private fileWriter: FileWriter) {}
+// class FileManager {
+//   constructor(private fileReader: FileReader, private fileWriter: FileWriter) {}
 
-  readFile(filePath: string): string {
-    return this.fileReader.read(filePath);
-  }
+//   readFile(filePath: string): string {
+//     return this.fileReader.read(filePath);
+//   }
 
-  writeFile(filePath: string, data: string): void {
-    this.fileWriter.write(filePath, data);
-  }
-}
+//   writeFile(filePath: string, data: string): void {
+//     this.fileWriter.write(filePath, data);
+//   }
+// }
 
-// Client code
-const fileReader = new LocalFileReader();
-const fileWriter = new LocalFileWriter();
-const fileManager = new FileManager(fileReader, fileWriter);
+// // Client code
+// const fileReader = new LocalFileReader();
+// const fileWriter = new LocalFileWriter();
+// const fileManager = new FileManager(fileReader, fileWriter);
 
-const filePath = "example.txt";
+// const filePath = "example.txt";
 
-// Reading content
-const currentContent = fileManager.readFile(filePath);
-console.log("Current content:", currentContent);
+// // Reading content
+// const currentContent = fileManager.readFile(filePath);
+// console.log("Current content:", currentContent);
 
-// Writing content
-const newData = "This is new content to be written into the file.";
-fileManager.writeFile(filePath, newData);
+// // Writing content
+// const newData = "This is new content to be written into the file.";
+// fileManager.writeFile(filePath, newData);
 
-// Updating content
-const updatedContent = fileManager.readFile(filePath);
-console.log("Updated content:", updatedContent);
+// // Updating content
+// const updatedContent = fileManager.readFile(filePath);
+// console.log("Updated content:", updatedContent);
