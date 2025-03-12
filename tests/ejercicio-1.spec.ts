@@ -21,7 +21,7 @@ describe('PeliculaCollection', () => {
   });
 
   test('debería buscar películas por año', () => {
-    expect(peliculaCollection.porAnio(2021)).toEqual([
+    expect(peliculaCollection.porAnhio(2021)).toEqual([
       new Pelicula('Pelicula 2', 2021),
     ]);
   });
@@ -47,7 +47,7 @@ describe('SerieCollection', () => {
   });
 
   test('debería buscar series por año', () => {
-    expect(serieCollection.porAnio(2021)).toEqual([
+    expect(serieCollection.porAnhio(2021)).toEqual([
       new Serie('Serie 2', 2021),
     ]);
   });
@@ -73,7 +73,7 @@ describe('DocumentalCollection', () => {
   });
 
   test('debería buscar documentales por año', () => {
-    expect(documentalCollection.porAnio(2021)).toEqual([
+    expect(documentalCollection.porAnhio(2021)).toEqual([
       new Documental('Documental 2', 2021),
     ]);
   });

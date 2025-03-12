@@ -8,9 +8,9 @@ export interface busquedaStreamable<T> {
 
   /**
    * Busca por año.
-   * @param anio - Año a buscar.
+   * @param anhio - Año a buscar.
    */
-  porAnio(anio: number): void;
+  porAnhio(anhio: number): void;
 }
 
 export interface propiedadesStreamable<T, U, W> {
@@ -21,22 +21,22 @@ export interface propiedadesStreamable<T, U, W> {
 
 export abstract class BasicStreamableCollection implements busquedaStreamable<string>, propiedadesStreamable<Pelicula, Serie, Documental> {
   abstract porNombre(nombre: string): void;
-  abstract porAnio(anio: number): void;
+  abstract porAnhio(anhio: number): void;
   peliculas: Pelicula[];
   series: Serie[];
   documentales: Documental[];
 }
 
 export class Pelicula {
-  constructor(public nombre: string, public anio: number) {}
+  constructor(public nombre: string, public anhio: number) {}
 }
 
 export class Serie {
-  constructor(public nombre: string, public anio: number) {}
+  constructor(public nombre: string, public anhio: number) {}
 }
 
 export class Documental {
-  constructor(public nombre: string, public anio: number) {}
+  constructor(public nombre: string, public anhio: number) {}
 }
 
 export class PeliculaCollection extends BasicStreamableCollection {
@@ -55,11 +55,11 @@ export class PeliculaCollection extends BasicStreamableCollection {
 
   /**
    * Busca películas por año.
-   * @param anio - Año de la película.
+   * @param anhio - Año de la película.
    * @returns Películas que coinciden con el año.
    */
-  porAnio(anio: number): Pelicula[] {
-    return this.peliculas.filter(pelicula => pelicula.anio === anio);
+  porAnhio(anhio: number): Pelicula[] {
+    return this.peliculas.filter(pelicula => pelicula.anhio === anhio);
   }
 }
 
@@ -79,11 +79,11 @@ export class SerieCollection extends BasicStreamableCollection {
 
   /**
    * Busca series por año.
-   * @param anio - Año de la serie.
+   * @param anhio - Año de la serie.
    * @returns Series que coinciden con el año.
    */
-  porAnio(anio: number): Serie[] {
-    return this.series.filter(serie => serie.anio === anio);
+  porAnhio(anhio: number): Serie[] {
+    return this.series.filter(serie => serie.anhio === anhio);
   }
 }
 
@@ -103,10 +103,10 @@ export class DocumentalCollection extends BasicStreamableCollection {
 
   /**
    * Busca documentales por año.
-   * @param anio - Año del documental.
+   * @param anhio - Año del documental.
    * @returns Documentales que coinciden con el año.
    */
-  porAnio(anio: number): Documental[] {
-    return this.documentales.filter(documental => documental.anio === anio);
+  porAnhio(anhio: number): Documental[] {
+    return this.documentales.filter(documental => documental.anhio === anhio);
   }
 }
