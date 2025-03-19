@@ -16,6 +16,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/ULL-ESIT-INF-DSI-2425/prct03-types-functions-JeanFrancoHdez/issues"
   },
